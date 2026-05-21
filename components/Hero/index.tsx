@@ -36,7 +36,8 @@ export default function Hero({ dict, locale }: { dict: Dictionary; locale: strin
 
         {/* Text block tipo code annotations */}
         <div className="mt-16 md:mt-12 max-w-3xl mx-auto text-center">
-          <p className="font-mono text-base md:text-lg text-text-primary leading-loose">
+          <p className="text-text-secondary leading-relaxed">{dict.hero.intro}</p>
+          <p className="mt-8 font-mono text-base md:text-lg text-text-primary leading-loose">
             {dict.hero.middleText}{" "}
             <span className="inline-block px-2 py-0.5 bg-editor-surface border border-editor-border rounded">
               {dict.hero.middleHighlight}
