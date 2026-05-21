@@ -25,7 +25,9 @@ export default function Navbar({
   const navItems = [
     { href: `/${locale}#about`, label: dict.nav.about },
     { href: `/${locale}#work`, label: dict.nav.work },
+    { href: `/${locale}#stack`, label: dict.nav.stack },
     { href: `/${locale}#services`, label: dict.nav.services },
+    { href: `/${locale}#resume`, label: dict.nav.resume },
     { href: `/${locale}#contact`, label: dict.nav.contact },
   ];
 
@@ -36,7 +38,7 @@ export default function Navbar({
           omar<span className="text-accent">.</span>serrano
         </Link>
 
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-5 lg:gap-7">
           {navItems.map((item) => (
             <Link key={item.href} href={item.href}
               className="text-sm text-text-secondary hover:text-text-primary transition-colors">

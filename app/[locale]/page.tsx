@@ -3,7 +3,9 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
 import Work from "@/components/Work";
+import Stack from "@/components/Stack";
 import Services from "@/components/Services";
+import Resume from "@/components/Resume/FolderManila";
 import Contact from "@/components/Contact";
 import ChatWidget from "@/components/ChatWidget";
 import Footer from "@/components/Footer";
@@ -18,7 +20,9 @@ export default function HomePage({ params }: { params: { locale: string } }) {
         <Hero dict={dict} locale={params.locale} />
         <About dict={dict} />
         <Work dict={dict} />
+        <Stack dict={dict} />
         <Services dict={dict} />
+        <Resume dict={dict} locale={params.locale} />
         <Contact dict={dict} locale={params.locale} />
       </main>
       <Footer dict={dict} />
