@@ -1,25 +1,28 @@
-export default function HomePage({ params }: { params: { locale: string } }) {
-  return (
-    <main className="mx-auto max-w-6xl px-6 pt-32 pb-24">
-      <p className="font-mono text-sm text-text-muted">
-        <span className="text-syntax-comment">{"// "}</span>
-        Toronto, GTA · EN · ES · FR
-      </p>
-      <h1 className="mt-4 font-mono text-5xl md:text-7xl font-medium text-text-primary tracking-tight">
-        Omar Serrano
-      </h1>
-      <p className="mt-6 max-w-2xl text-text-secondary leading-relaxed">
-        Scaffolding base activo. Locale actual:{" "}
-        <code className="text-syntax-string">{params.locale}</code>
-      </p>
+import { getDictionary } from "@/lib/i18n";
+import Navbar from "@/components/Navbar";
+import Hero from "@/components/Hero";
+import About from "@/components/About";
+import Work from "@/components/Work";
+import Services from "@/components/Services";
+import Contact from "@/components/Contact";
+import ChatWidget from "@/components/ChatWidget";
+import Footer from "@/components/Footer";
 
-      <div className="mt-16 p-6 rounded-lg bg-editor-surface border border-editor-border font-mono text-sm text-text-secondary">
-        <span className="text-syntax-comment">{"// status: "}</span>
-        <span className="text-syntax-keyword">const</span>{" "}
-        <span className="text-syntax-property">phase</span>
-        {" = "}
-        <span className="text-syntax-string">&quot;v0 — scaffolding complete&quot;</span>;
-      </div>
-    </main>
+export default function HomePage({ params }: { params: { locale: string } }) {
+  const dict = getDictionary(params.locale);
+
+  return (
+    <>
+      <Navbar locale={params.locale} dict={dict} />
+      <main>
+        <Hero dict={dict} locale={params.locale} />
+        <About dict={dict} />
+        <Work dict={dict} />
+        <Services dict={dict} />
+        <Contact dict={dict} locale={params.locale} />
+      </main>
+      <Footer dict={dict} />
+      <ChatWidget dict={dict} />
+    </>
   );
 }
