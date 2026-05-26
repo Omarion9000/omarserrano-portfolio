@@ -1,5 +1,6 @@
 import { getDictionary } from "@/lib/i18n";
 import IntroAnimation from "@/components/IntroAnimation";
+import CustomCursor from "@/components/CustomCursor";
 import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
@@ -18,6 +19,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
   return (
     <>
       <IntroAnimation />
+      <CustomCursor />
       <SmoothScroll>
         <Navbar locale={params.locale} dict={dict} />
         <main>

@@ -9,6 +9,7 @@ import AnimatedObject from "./AnimatedObject";
 import CodeTerminal from "./CodeTerminal";
 import FlyingPencil from "./FlyingPencil";
 import InteractivePostit from "./InteractivePostit";
+import ParallaxLayer from "./ParallaxLayer";
 
 export default function CollageObjects({ dict }: { dict: Dictionary }) {
   return (
@@ -19,7 +20,9 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
         transition={{ duration: 0.6, delay: 0.1 }}
         className="absolute left-[4%] top-[8%] z-20"
       >
-        <BadgeCard dict={dict} />
+        <ParallaxLayer depth={2.5}>
+          <BadgeCard dict={dict} />
+        </ParallaxLayer>
       </motion.div>
 
       <motion.div
@@ -28,16 +31,18 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
         transition={{ duration: 0.6, delay: 0.2 }}
         className="absolute left-[8%] top-[62%] w-[250px]"
       >
-        <AnimatedObject
-          src="/objects/vinyl.png"
-          alt="Vinyl record"
-          width={250}
-          height={250}
-          anim="spin"
-          priority
-          floatDelay={2}
-          floatDuration={11}
-        />
+        <ParallaxLayer depth={2.5}>
+          <AnimatedObject
+            src="/objects/vinyl.png"
+            alt="Vinyl record"
+            width={250}
+            height={250}
+            anim="spin"
+            priority
+            floatDelay={2}
+            floatDuration={11}
+          />
+        </ParallaxLayer>
       </motion.div>
 
       <motion.div
@@ -46,15 +51,17 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
         transition={{ duration: 0.6, delay: 0.25 }}
         className="absolute left-[28%] top-[4%] w-[230px] rotate-[-3deg]"
       >
-        <AnimatedObject
-          src="/objects/plant.png"
-          alt="Plant"
-          width={230}
-          height={230}
-          anim="sway"
-          floatDelay={0}
-          floatDuration={9}
-        />
+        <ParallaxLayer depth={1.5}>
+          <AnimatedObject
+            src="/objects/plant.png"
+            alt="Plant"
+            width={230}
+            height={230}
+            anim="sway"
+            floatDelay={0}
+            floatDuration={9}
+          />
+        </ParallaxLayer>
       </motion.div>
 
       <motion.div
@@ -63,15 +70,17 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
         transition={{ duration: 0.6, delay: 0.3 }}
         className="absolute left-[40%] top-[22%] w-[190px] rotate-[4deg]"
       >
-        <AnimatedObject
-          src="/objects/coffee.png"
-          alt="Coffee cup"
-          width={190}
-          height={190}
-          anim="wobble"
-          floatDelay={1.5}
-          floatDuration={7}
-        />
+        <ParallaxLayer depth={1.5}>
+          <AnimatedObject
+            src="/objects/coffee.png"
+            alt="Coffee cup"
+            width={190}
+            height={190}
+            anim="wobble"
+            floatDelay={1.5}
+            floatDuration={10}
+          />
+        </ParallaxLayer>
       </motion.div>
 
       <motion.div
@@ -107,15 +116,17 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
         transition={{ duration: 0.6, delay: 0.4 }}
         className="absolute right-[8%] top-[64%]"
       >
-        <AnimatedObject
-          src="/objects/ps5-controller.png"
-          alt="PS5 controller"
-          width={200}
-          height={200}
-          anim="gaming"
-          floatDelay={1}
-          floatDuration={8}
-        />
+        <ParallaxLayer depth={2.5}>
+          <AnimatedObject
+            src="/objects/ps5-controller.png"
+            alt="PS5 controller"
+            width={200}
+            height={200}
+            anim="gaming"
+            floatDelay={1}
+            floatDuration={8}
+          />
+        </ParallaxLayer>
       </motion.div>
 
       <motion.div
@@ -125,7 +136,9 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
         transition={{ duration: 0.6, delay: 0.3 }}
         className="absolute right-[3%] top-[8%]"
       >
-        <CodeTerminal />
+        <ParallaxLayer depth={2.5}>
+          <CodeTerminal />
+        </ParallaxLayer>
       </motion.div>
 
       <motion.div
@@ -134,15 +147,17 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
         transition={{ duration: 0.5, delay: 0.45 }}
         className="absolute right-[20%] top-[42%] w-[150px]"
       >
-        <AnimatedObject
-          src="/objects/ice-coffee.png"
-          alt="Iced coffee"
-          width={150}
-          height={150}
-          anim="shake"
-          floatDelay={0.8}
-          floatDuration={10}
-        />
+        <ParallaxLayer depth={1.5}>
+          <AnimatedObject
+            src="/objects/ice-coffee.png"
+            alt="Iced coffee"
+            width={150}
+            height={150}
+            anim="shake"
+            floatDelay={0.8}
+            floatDuration={10}
+          />
+        </ParallaxLayer>
       </motion.div>
 
       <motion.div
@@ -151,7 +166,9 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
         transition={{ duration: 0.5, delay: 0.5 }}
         className="absolute left-[30%] top-[68%]"
       >
-        <InteractivePostit message={dict.hero.postit} />
+        <ParallaxLayer depth={2.5}>
+          <InteractivePostit message={dict.hero.postit} />
+        </ParallaxLayer>
       </motion.div>
 
       <FlyingPencil />

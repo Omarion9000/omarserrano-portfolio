@@ -27,8 +27,8 @@ const HOVER_ANIMATIONS: Record<AnimType, TargetAndTransition> = {
   wobble: {
     scale: 1.15,
     zIndex: 30,
-    rotate: [0, -6, 6, -6, 6, 0],
-    transition: { duration: 0.6, repeat: Infinity, ease: "easeInOut" },
+    rotate: [0, -3, 3, -3, 3, 0],
+    transition: { duration: 1.2, repeat: Infinity, ease: "easeInOut" },
   },
   sway: {
     scale: 1.15,
