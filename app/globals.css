@@ -81,6 +81,33 @@ html, body {
   }
 }
 
+/* Pixel bunny sprite animation */
+@keyframes bunny-run-frames {
+  from { background-position: 0 0; }
+  to   { background-position: -160px 0; }
+}
+@keyframes bunny-idle-frames {
+  from { background-position: 0 0; }
+  to   { background-position: -256px 0; }
+}
+.bunny-sprite {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;
+  transform: scale(1.75);
+  transform-origin: bottom center;
+}
+.bunny-sprite.run {
+  background-image: url('/sprites/bunny-run.png');
+  animation: bunny-run-frames 0.6s steps(5) infinite;
+}
+.bunny-sprite.idle {
+  background-image: url('/sprites/bunny-idle.png');
+  animation: bunny-idle-frames 1s steps(8) infinite;
+}
+
 html.lenis, html.lenis body {
   height: auto;
 }
