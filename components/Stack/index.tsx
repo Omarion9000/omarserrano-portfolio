@@ -1,5 +1,6 @@
 import type { Dictionary } from "@/lib/i18n";
 import SkillIcon from "@/components/SkillIcon";
+import FloatingShapes from "@/components/FloatingShapes";
 
 const POSTIT_STYLES = {
   amber: { bg: "#FFE898", rotate: "-rotate-3" },
@@ -11,8 +12,9 @@ type PostitColor = keyof typeof POSTIT_STYLES;
 
 export default function Stack({ dict }: { dict: Dictionary }) {
   return (
-    <section id="stack" className="py-24">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="stack" className="relative py-24">
+      <FloatingShapes />
+      <div className="relative mx-auto max-w-6xl px-6">
         <h2 className="font-mono text-sm text-text-muted">
           <span className="text-syntax-comment">{"// "}</span>
           {dict.stack.heading}

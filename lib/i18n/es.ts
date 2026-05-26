@@ -42,6 +42,38 @@ const es = {
       "Soy developer en Toronto, trabajando en tres idiomas y tres problemas: IA conversacional, automatización y SaaS a medida.",
       "Me gustan los sistemas que hacen su trabajo en silencio — el chatbot que responde bien a las 2am, la automatización que corre seis meses sin que nadie la toque, el dashboard que el equipo abre cada lunes.",
     ],
+    dashboard: {
+      journeyLabel: "mi trayectoria",
+      certifiedLabel: "certificaciones",
+      currentlyLabel: "construyendo ahora",
+      nowBadge: "HOY",
+      currentlyText:
+        "Recepcionistas IA bilingües, flujos Power Apps + Automate (30% más eficiencia), voice agents y automatizaciones de back-office que corren meses sin tocarse.",
+      journey: [
+        {
+          title: "ESCI — Comercio Internacional",
+          meta: "México · 2018–2022",
+          detail: "Modelo ONU · base intercultural",
+        },
+        {
+          title: "Meraki Creative Lab — Developer",
+          meta: "México · 2023–2025 · Remoto",
+        },
+        {
+          title: "Georgian College — Computer Programming",
+          meta: "Toronto · 2023–2025",
+        },
+        {
+          title: "Developer IA & Automatización",
+          meta: "Autónomo · 2024–presente · Toronto",
+          current: true,
+        },
+      ],
+      certs: [
+        { title: "Microsoft Azure Fundamentals", meta: "AZ-900 · 2025" },
+        { title: "Azure DevOps", meta: "2025" },
+      ],
+    },
   },
   stack: {
     heading: "Stack",

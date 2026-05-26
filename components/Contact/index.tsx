@@ -1,10 +1,12 @@
 import type { Dictionary } from "@/lib/i18n";
 import Terminal from "./Terminal";
+import FloatingShapes from "@/components/FloatingShapes";
 
 export default function Contact({ dict, locale }: { dict: Dictionary; locale: string }) {
   return (
-    <section id="contact" className="py-24">
-      <div className="mx-auto max-w-3xl px-6">
+    <section id="contact" className="relative py-24">
+      <FloatingShapes />
+      <div className="relative mx-auto max-w-3xl px-6">
         <h2 className="font-mono text-sm text-text-muted">
           <span className="text-syntax-comment">{"// "}</span>
           {dict.contact.heading}

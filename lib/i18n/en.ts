@@ -42,6 +42,38 @@ const en = {
       "I'm a developer from Toronto working across three languages and three problem spaces: conversational AI, workflow automation, and custom SaaS.",
       "I like systems that quietly do their job — the chatbot that answers correctly at 2am, the automation that runs for six months without anyone touching it, the dashboard the team opens every Monday.",
     ],
+    dashboard: {
+      journeyLabel: "my journey",
+      certifiedLabel: "certified",
+      currentlyLabel: "currently building",
+      nowBadge: "NOW",
+      currentlyText:
+        "Bilingual AI receptionists, Power Apps + Automate flows (30% efficiency gains), voice agents, and back-office automations that run for months untouched.",
+      journey: [
+        {
+          title: "ESCI — International Trade",
+          meta: "Mexico · 2018–2022",
+          detail: "Model UN · cross-cultural foundation",
+        },
+        {
+          title: "Meraki Creative Lab — Developer",
+          meta: "Mexico · 2023–2025 · Remote",
+        },
+        {
+          title: "Georgian College — Computer Programming",
+          meta: "Toronto · 2023–2025",
+        },
+        {
+          title: "AI & Automation Developer",
+          meta: "Self-employed · 2024–present · Toronto",
+          current: true,
+        },
+      ],
+      certs: [
+        { title: "Microsoft Azure Fundamentals", meta: "AZ-900 · 2025" },
+        { title: "Azure DevOps", meta: "2025" },
+      ],
+    },
   },
   stack: {
     heading: "Stack",
