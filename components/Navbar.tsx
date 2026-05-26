@@ -34,15 +34,22 @@ export default function Navbar({
   return (
     <nav className="fixed top-0 inset-x-0 z-50 backdrop-blur-sm bg-background/70 border-b border-editor-border/60">
       <div className="mx-auto max-w-6xl px-6 h-16 flex items-center justify-between">
-        <Link href={`/${locale}`} className="font-mono text-sm text-text-primary hover:text-accent transition-colors">
+        <Link
+          href={`/${locale}`}
+          className="font-mono text-sm text-text-primary hover:text-accent transition-colors duration-300"
+        >
           omar<span className="text-accent">.</span>serrano
         </Link>
 
         <div className="hidden md:flex items-center gap-5 lg:gap-7">
           {navItems.map((item) => (
-            <Link key={item.href} href={item.href}
-              className="text-sm text-text-secondary hover:text-text-primary transition-colors">
+            <Link
+              key={item.href}
+              href={item.href}
+              className="relative text-sm text-text-secondary hover:text-text-primary transition-colors duration-300 group"
+            >
               {item.label}
+              <span className="absolute left-0 -bottom-1 w-0 h-px bg-accent transition-all duration-300 group-hover:w-full" />
             </Link>
           ))}
         </div>
@@ -54,9 +61,12 @@ export default function Navbar({
               <button
                 onClick={() => switchLocale(l)}
                 className={clsx(
-                  "uppercase transition-colors",
-                  l === locale ? "text-accent font-medium" : "text-text-muted hover:text-text-primary"
-                )}>
+                  "uppercase transition-colors duration-300",
+                  l === locale
+                    ? "text-accent font-medium"
+                    : "text-text-muted hover:text-text-primary",
+                )}
+              >
                 {l}
               </button>
             </span>

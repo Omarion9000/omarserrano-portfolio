@@ -72,6 +72,15 @@ html, body {
   margin-left: 2px;
 }
 
+@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
+  * {
+    cursor: none !important;
+  }
+  input, textarea {
+    cursor: text !important;
+  }
+}
+
 html.lenis, html.lenis body {
   height: auto;
 }
