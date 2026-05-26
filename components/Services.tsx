@@ -1,9 +1,11 @@
 import type { Dictionary } from "@/lib/i18n";
+import FloatingShapes from "@/components/FloatingShapes";
 
 export default function Services({ dict }: { dict: Dictionary }) {
   return (
-    <section id="services" className="py-24">
-      <div className="mx-auto max-w-5xl px-6">
+    <section id="services" className="relative py-24">
+      <FloatingShapes />
+      <div className="relative mx-auto max-w-5xl px-6">
         <h2 className="font-mono text-sm text-text-muted">
           <span className="text-syntax-comment">{"// "}</span>
           {dict.services.heading}

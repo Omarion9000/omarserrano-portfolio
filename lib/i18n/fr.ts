@@ -42,6 +42,38 @@ const fr = {
       "Développeur basé à Toronto, je travaille en trois langues sur trois domaines : IA conversationnelle, automatisation, et SaaS sur mesure.",
       "J'aime les systèmes qui font leur travail en silence — le chatbot qui répond bien à 2h du matin, l'automatisation qui tourne six mois sans intervention, le tableau de bord ouvert chaque lundi.",
     ],
+    dashboard: {
+      journeyLabel: "mon parcours",
+      certifiedLabel: "certifications",
+      currentlyLabel: "en construction",
+      nowBadge: "ACTUEL",
+      currentlyText:
+        "Réceptionnistes IA bilingues, flux Power Apps + Automate (30% de gains d'efficacité), agents vocaux et automatisations back-office qui tournent des mois sans intervention.",
+      journey: [
+        {
+          title: "ESCI — Commerce International",
+          meta: "Mexique · 2018–2022",
+          detail: "Modèle ONU · base interculturelle",
+        },
+        {
+          title: "Meraki Creative Lab — Développeur",
+          meta: "Mexique · 2023–2025 · À distance",
+        },
+        {
+          title: "Georgian College — Computer Programming",
+          meta: "Toronto · 2023–2025",
+        },
+        {
+          title: "Développeur IA & Automatisation",
+          meta: "Indépendant · 2024–présent · Toronto",
+          current: true,
+        },
+      ],
+      certs: [
+        { title: "Microsoft Azure Fundamentals", meta: "AZ-900 · 2025" },
+        { title: "Azure DevOps", meta: "2025" },
+      ],
+    },
   },
   stack: {
     heading: "Stack",
