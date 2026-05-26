@@ -33,6 +33,11 @@ export default function PhysicsLayer() {
         },
       });
 
+      render.canvas.style.pointerEvents = "none";
+      render.canvas.style.position = "absolute";
+      render.canvas.style.top = "0";
+      render.canvas.style.left = "0";
+
       const wallOpts = { isStatic: true, render: { visible: false } };
       Matter.World.add(world, [
         Matter.Bodies.rectangle(width / 2, -10, width, 20, wallOpts),
@@ -56,14 +61,6 @@ export default function PhysicsLayer() {
         Matter.World.add(world, ball);
       }
 
-      const mouse = Matter.Mouse.create(render.canvas);
-      const mouseConstraint = Matter.MouseConstraint.create(engine, {
-        mouse,
-        constraint: { stiffness: 0.2, render: { visible: false } },
-      });
-      Matter.World.add(world, mouseConstraint);
-      render.mouse = mouse;
-
       const runner = Matter.Runner.create();
       Matter.Runner.run(runner, engine);
       Matter.Render.run(render);
@@ -83,7 +80,8 @@ export default function PhysicsLayer() {
   return (
     <div
       ref={containerRef}
-      className="absolute inset-0 pointer-events-auto"
+      aria-hidden
+      className="absolute inset-0 pointer-events-none"
       style={{ zIndex: 1 }}
     />
   );

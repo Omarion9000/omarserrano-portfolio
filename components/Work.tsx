@@ -14,8 +14,8 @@ export default function Work({ dict }: { dict: Dictionary }) {
         </h2>
         <p className="mt-2 text-text-secondary">{dict.work.subheading}</p>
 
-        <div className="mt-10 cork-board rounded-xl p-8 md:p-12 shadow-paper">
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-8 md:gap-10">
+        <div className="mt-10 cork-board rounded-xl p-6 sm:p-8 md:p-12 shadow-paper">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
             {dict.work.items.map((item, i) => {
               const isExternal = item.href.startsWith("http");
               return (
@@ -24,7 +24,7 @@ export default function Work({ dict }: { dict: Dictionary }) {
                   href={item.href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
-                  className={`group relative bg-background p-3 pb-10 shadow-polaroid ${ROTATIONS[i % ROTATIONS.length]} hover:rotate-0 hover:-translate-y-1 transition-all duration-300`}
+                  className={`group relative bg-background p-3 shadow-polaroid ${ROTATIONS[i % ROTATIONS.length]} hover:rotate-0 hover:-translate-y-2 hover:scale-105 hover:z-10 transition-all duration-300`}
                 >
                   <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-accent shadow-[0_1px_2px_rgba(0,0,0,0.3)] z-10" />
 
@@ -34,11 +34,11 @@ export default function Work({ dict }: { dict: Dictionary }) {
                       alt={item.title}
                       fill
                       className="object-cover"
-                      sizes="(max-width: 768px) 50vw, 33vw"
+                      sizes="(max-width: 768px) 100vw, 33vw"
                     />
                   </div>
 
-                  <div className="absolute bottom-2 left-3 right-3 text-center">
+                  <div className="pt-3 pb-1 text-center">
                     <div className="font-medium text-sm text-text-primary">{item.title}</div>
                     <div className="text-[10px] font-mono text-text-muted mt-0.5">{item.tag}</div>
                   </div>

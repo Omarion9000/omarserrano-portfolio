@@ -35,6 +35,7 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-inter)", "system-ui", "sans-serif"],
         mono: ["var(--font-jetbrains)", "ui-monospace", "SFMono-Regular", "monospace"],
+        signature: ["var(--font-caveat)", "cursive"],
       },
       boxShadow: {
         paper: "0 1px 2px rgba(26,24,20,0.04), 0 8px 24px -8px rgba(26,24,20,0.12)",

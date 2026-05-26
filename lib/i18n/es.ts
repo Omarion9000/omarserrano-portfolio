@@ -32,6 +32,7 @@ const es = {
     middleText: "Convierto ideas crudas",
     middleHighlight: "en producto entregado",
     middleSuffix: "con equipos que se mueven rápido.",
+    postit: "¡nunca te rindas!",
   },
   about: {
     heading: "Sobre mí",
@@ -204,6 +205,7 @@ const es = {
       "¡Hola! Soy Sofia, recepcionista virtual de Smile Dental Toronto. ¿En qué puedo ayudarte hoy?",
     banner: "Demo en vivo — Construido por Omar con Claude API",
     poweredBy: "Powered by Claude · Demo construido por Omar Serrano",
+    tryAsking: "Prueba preguntando:",
     suggestions: [
       "¿Cuánto cuesta una limpieza?",
       "Quiero agendar una cita",
