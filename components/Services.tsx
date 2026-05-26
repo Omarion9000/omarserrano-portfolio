@@ -3,7 +3,7 @@ import FloatingShapes from "@/components/FloatingShapes";
 
 export default function Services({ dict }: { dict: Dictionary }) {
   return (
-    <section id="services" className="relative py-24">
+    <section id="services" className="relative isolate py-24">
       <FloatingShapes />
       <div className="relative mx-auto max-w-5xl px-6">
         <h2 className="font-mono text-sm text-text-muted">

@@ -51,7 +51,7 @@ export default function FloatingShapes() {
                 width: s.size,
                 height: s.size,
                 borderRadius: "50%",
-                opacity: 0.1,
+                opacity: 0.13,
                 ...(s.filled
                   ? { background: s.color }
                   : { border: `2px solid ${s.color}` }),
@@ -65,7 +65,7 @@ export default function FloatingShapes() {
                 width: s.size,
                 height: s.size,
                 borderRadius: "18%",
-                opacity: 0.1,
+                opacity: 0.13,
                 ...(s.filled
                   ? { background: s.color }
                   : { border: `2px solid ${s.color}` }),
@@ -78,7 +78,7 @@ export default function FloatingShapes() {
               style={{
                 width: 0,
                 height: 0,
-                opacity: 0.1,
+                opacity: 0.13,
                 borderLeft: `${s.size / 2}px solid transparent`,
                 borderRight: `${s.size / 2}px solid transparent`,
                 borderBottom: `${s.size}px solid ${s.color}`,

@@ -153,7 +153,7 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
             alt="Iced coffee"
             width={150}
             height={150}
-            anim="shake"
+            anim="wobble"
             floatDelay={0.8}
             floatDuration={10}
           />
