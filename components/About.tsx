@@ -6,7 +6,7 @@ export default function About({ dict }: { dict: Dictionary }) {
   const journey = dashboard.journey;
 
   return (
-    <section id="about" className="relative py-24">
+    <section id="about" className="relative isolate py-24">
       <FloatingShapes />
       <div className="relative mx-auto max-w-4xl px-6">
         <h2 className="font-mono text-sm text-text-muted">

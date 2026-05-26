@@ -12,7 +12,7 @@ type PostitColor = keyof typeof POSTIT_STYLES;
 
 export default function Stack({ dict }: { dict: Dictionary }) {
   return (
-    <section id="stack" className="relative py-24">
+    <section id="stack" className="relative isolate py-24">
       <FloatingShapes />
       <div className="relative mx-auto max-w-6xl px-6">
         <h2 className="font-mono text-sm text-text-muted">
