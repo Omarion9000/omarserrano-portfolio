@@ -17,7 +17,7 @@ const en = {
     role: "AI & Automation Developer",
     location: "Toronto, GTA",
     languages: "EN · ES · FR",
-    tagline: "I think, then I ship.",
+    tagline: "Designing systems. Shipping experiences.",
     whoami: "Bilingual developer · Toronto",
     interests: "AI · automation · SaaS · voice agents",
     playlistTitle: "Building in public",

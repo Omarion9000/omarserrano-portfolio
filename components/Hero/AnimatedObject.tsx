@@ -58,6 +58,8 @@ export default function AnimatedObject({
   anim,
   className = "",
   priority = false,
+  floatDelay = 0,
+  floatDuration = 8,
 }: {
   src: string;
   alt: string;
@@ -66,22 +68,35 @@ export default function AnimatedObject({
   anim: AnimType;
   className?: string;
   priority?: boolean;
+  floatDelay?: number;
+  floatDuration?: number;
 }) {
   return (
     <motion.div
-      whileHover={HOVER_ANIMATIONS[anim]}
-      className={`cursor-pointer ${className}`}
-      style={{ transformStyle: "preserve-3d" }}
+      animate={{ y: [0, -6, 0, 4, 0] }}
+      transition={{
+        duration: floatDuration,
+        repeat: Infinity,
+        ease: "easeInOut",
+        delay: floatDelay,
+      }}
+      className={className}
     >
-      <Image
-        src={src}
-        alt={alt}
-        width={width}
-        height={height}
-        priority={priority}
-        style={{ width: "auto", height: "auto" }}
-        className="drop-shadow-lg pointer-events-none"
-      />
+      <motion.div
+        whileHover={HOVER_ANIMATIONS[anim]}
+        className="cursor-pointer"
+        style={{ transformStyle: "preserve-3d" }}
+      >
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          priority={priority}
+          style={{ width: "auto", height: "auto" }}
+          className="drop-shadow-lg pointer-events-none"
+        />
+      </motion.div>
     </motion.div>
   );
 }

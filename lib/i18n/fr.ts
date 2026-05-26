@@ -17,7 +17,7 @@ const fr = {
     role: "Développeur IA & Automatisation",
     location: "Toronto, GTA",
     languages: "EN · ES · FR",
-    tagline: "Je conçois, puis je livre.",
+    tagline: "Concevoir des systèmes. Livrer des expériences.",
     whoami: "Développeur bilingue · Toronto",
     interests: "IA · automatisation · SaaS · agents vocaux",
     playlistTitle: "Building in public",
