@@ -1,4 +1,5 @@
 import { getDictionary } from "@/lib/i18n";
+import IntroAnimation from "@/components/IntroAnimation";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -15,6 +16,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
 
   return (
     <>
+      <IntroAnimation />
       <Navbar locale={params.locale} dict={dict} />
       <main>
         <Hero dict={dict} locale={params.locale} />

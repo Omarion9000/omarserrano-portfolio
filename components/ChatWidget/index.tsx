@@ -22,7 +22,7 @@ export default function ChatWidget({ dict }: { dict: Dictionary }) {
     setMessages((prev) =>
       prev.length === 0 ? [{ role: "assistant", content: dict.chat.welcome }] : prev,
     );
-    setTimeout(() => inputRef.current?.focus(), 200);
+    setTimeout(() => inputRef.current?.focus(), 250);
   }
 
   useEffect(() => {
@@ -42,7 +42,9 @@ export default function ChatWidget({ dict }: { dict: Dictionary }) {
 
       try {
         const apiMessages = newMessages
-          .filter((m, idx) => !(idx === 0 && m.role === "assistant" && m.content === dict.chat.welcome))
+          .filter(
+            (m, idx) => !(idx === 0 && m.role === "assistant" && m.content === dict.chat.welcome),
+          )
           .map((m) => ({ role: m.role, content: m.content }));
 
         const res = await fetch(API_URL, {
@@ -71,7 +73,15 @@ export default function ChatWidget({ dict }: { dict: Dictionary }) {
         setLoading(false);
       }
     },
-    [input, loading, messages, dict.chat.welcome, dict.chat.rateLimit, dict.chat.error, dict.chat.fallbackReply],
+    [
+      input,
+      loading,
+      messages,
+      dict.chat.welcome,
+      dict.chat.rateLimit,
+      dict.chat.error,
+      dict.chat.fallbackReply,
+    ],
   );
 
   return (
@@ -85,11 +95,14 @@ export default function ChatWidget({ dict }: { dict: Dictionary }) {
             exit={{ scale: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 280, damping: 20, delay: 0.8 }}
             onClick={handleOpen}
-            className="fixed bottom-6 right-6 z-50 font-mono text-sm px-4 py-3 bg-text-primary text-background rounded-full shadow-terminal hover:bg-accent transition-colors flex items-center gap-2"
+            className="fixed bottom-6 right-6 z-50 group"
             aria-label={dict.chat.open}
           >
-            <span className="text-syntax-string">$</span>
-            <span>{dict.chat.open}</span>
+            <span className="absolute inset-0 rounded-full bg-accent/30 animate-ping" />
+            <span className="relative font-mono text-sm px-4 py-3 bg-text-primary text-background rounded-full shadow-terminal group-hover:bg-accent transition-colors flex items-center gap-2">
+              <span className="w-2 h-2 rounded-full bg-green-400" />
+              <span>{dict.chat.open}</span>
+            </span>
           </motion.button>
         )}
       </AnimatePresence>
@@ -97,24 +110,43 @@ export default function ChatWidget({ dict }: { dict: Dictionary }) {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.96 }}
+            initial={{ opacity: 0, y: 24, scale: 0.96 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.96 }}
-            transition={{ duration: 0.22 }}
-            className="fixed bottom-6 right-6 z-50 w-[calc(100vw-3rem)] sm:w-[400px] h-[600px] max-h-[calc(100vh-3rem)] flex flex-col bg-background rounded-lg border border-editor-border shadow-terminal overflow-hidden"
+            exit={{ opacity: 0, y: 24, scale: 0.96 }}
+            transition={{ type: "spring", stiffness: 300, damping: 28 }}
+            className="fixed bottom-6 right-6 z-50 w-[calc(100vw-3rem)] sm:w-[400px] h-[600px] max-h-[calc(100vh-3rem)] flex flex-col bg-background rounded-2xl border border-editor-border shadow-terminal overflow-hidden"
             role="dialog"
             aria-label={dict.chat.title}
           >
-            <div className="bg-editor-surface px-4 py-3 flex items-center gap-2 border-b border-editor-border">
+            <div className="bg-editor-surface px-4 py-2.5 flex items-center gap-2 border-b border-editor-border">
               <button
                 type="button"
                 onClick={() => setOpen(false)}
                 aria-label="close"
-                className="w-3 h-3 rounded-full bg-red-400 hover:opacity-80 transition"
+                className="w-3 h-3 rounded-full bg-red-400 hover:opacity-70 transition"
               />
               <div className="w-3 h-3 rounded-full bg-amber-400" />
               <div className="w-3 h-3 rounded-full bg-green-500" />
-              <div className="ml-auto font-mono text-xs text-text-muted">{dict.chat.title}</div>
+              <div className="ml-auto font-mono text-[11px] text-text-muted">
+                {dict.chat.title}
+              </div>
+            </div>
+
+            <div className="px-4 py-3 flex items-center gap-3 border-b border-editor-border bg-background">
+              <div className="relative">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-accent to-accent-warm flex items-center justify-center font-mono font-semibold text-background text-sm">
+                  S
+                </div>
+                <span className="absolute -bottom-0.5 -right-0.5 w-3 h-3 rounded-full bg-green-500 border-2 border-background">
+                  <span className="absolute inset-0 rounded-full bg-green-500 animate-ping" />
+                </span>
+              </div>
+              <div>
+                <div className="font-medium text-sm text-text-primary leading-tight">Sofia</div>
+                <div className="text-[11px] text-text-muted leading-tight">
+                  {dict.chat.subtitle}
+                </div>
+              </div>
             </div>
 
             <div className="px-4 py-2 bg-accent-warm/15 border-b border-editor-border">
@@ -123,65 +155,121 @@ export default function ChatWidget({ dict }: { dict: Dictionary }) {
               </p>
             </div>
 
-            <div ref={scrollRef} className="flex-1 overflow-y-auto px-4 py-4 font-mono text-sm space-y-3 bg-background">
+            <div
+              ref={scrollRef}
+              className="flex-1 overflow-y-auto px-4 py-4 space-y-3 bg-editor-surface/30"
+            >
               {messages.map((m, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, y: 8 }}
+                  initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className={m.role === "user" ? "text-text-primary" : "text-text-secondary"}
+                  transition={{ duration: 0.3 }}
+                  className={`flex ${m.role === "user" ? "justify-end" : "justify-start"}`}
                 >
-                  <span className={m.role === "user" ? "text-syntax-string" : "text-accent"}>
-                    {m.role === "user" ? "you" : "sofia"} →
-                  </span>{" "}
-                  {m.content}
+                  <div
+                    className={`max-w-[82%] px-4 py-2.5 rounded-2xl text-sm leading-relaxed ${
+                      m.role === "user"
+                        ? "bg-accent text-background rounded-br-sm"
+                        : "bg-background text-text-primary rounded-bl-sm border border-editor-border shadow-sm"
+                    }`}
+                  >
+                    {m.content}
+                  </div>
                 </motion.div>
               ))}
 
               {loading && (
-                <div className="text-text-muted">
-                  <span className="text-accent">sofia</span> → <span className="animate-pulse">…</span>
-                </div>
+                <motion.div
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  className="flex justify-start"
+                >
+                  <div className="bg-background px-4 py-3 rounded-2xl rounded-bl-sm border border-editor-border shadow-sm">
+                    <div className="flex items-center gap-1">
+                      <span
+                        className="w-1.5 h-1.5 bg-text-muted rounded-full animate-bounce"
+                        style={{ animationDelay: "0ms" }}
+                      />
+                      <span
+                        className="w-1.5 h-1.5 bg-text-muted rounded-full animate-bounce"
+                        style={{ animationDelay: "150ms" }}
+                      />
+                      <span
+                        className="w-1.5 h-1.5 bg-text-muted rounded-full animate-bounce"
+                        style={{ animationDelay: "300ms" }}
+                      />
+                    </div>
+                  </div>
+                </motion.div>
               )}
 
               {error && (
-                <div className="text-red-600 text-xs bg-red-50 border border-red-200 px-3 py-2 rounded">{error}</div>
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex justify-center"
+                >
+                  <div className="text-xs text-red-600 bg-red-50 border border-red-200 px-3 py-2 rounded-lg text-center">
+                    {error}
+                  </div>
+                </motion.div>
               )}
 
               {messages.length === 1 && !loading && (
-                <div className="pt-2 space-y-2">
-                  <p className="text-text-muted text-xs">try asking:</p>
-                  <div className="flex flex-wrap gap-2">
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 }}
+                  className="pt-2 space-y-2"
+                >
+                  <p className="text-[11px] text-text-muted text-center">
+                    {dict.chat.tryAsking}
+                  </p>
+                  <div className="flex flex-wrap gap-2 justify-center">
                     {dict.chat.suggestions.map((s) => (
                       <button
                         type="button"
                         key={s}
                         onClick={() => send(s)}
-                        className="text-xs px-3 py-1.5 rounded border border-editor-border bg-editor-surface hover:bg-accent hover:text-background hover:border-accent transition-colors"
+                        className="text-xs px-3 py-1.5 rounded-full bg-background border border-editor-border text-text-secondary hover:border-accent hover:text-accent hover:bg-accent/5 transition-colors"
                       >
                         {s}
                       </button>
                     ))}
                   </div>
-                </div>
+                </motion.div>
               )}
             </div>
 
-            <div className="px-4 py-3 border-t border-editor-border bg-editor-surface">
-              <div className="flex items-center gap-2">
-                <span className="font-mono text-syntax-string text-sm">$</span>
-                <label htmlFor="sofia-input" className="sr-only">{dict.chat.placeholder}</label>
+            <div className="px-3 py-3 border-t border-editor-border bg-background">
+              <div className="flex items-center gap-2 bg-editor-surface rounded-xl px-3 py-2">
+                <span className="font-mono text-accent text-sm">$</span>
+                <label htmlFor="sofia-input" className="sr-only">
+                  {dict.chat.placeholder}
+                </label>
                 <input
                   id="sofia-input"
                   ref={inputRef}
                   value={input}
                   onChange={(e) => setInput(e.target.value)}
-                  onKeyDown={(e) => { if (e.key === "Enter") send(); }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") send();
+                  }}
                   placeholder={dict.chat.placeholder}
                   disabled={loading}
-                  className="flex-1 bg-transparent border-none outline-none font-mono text-sm text-text-primary placeholder:text-text-muted disabled:opacity-50"
+                  className="flex-1 bg-transparent border-none outline-none text-sm text-text-primary placeholder:text-text-muted disabled:opacity-50"
                   spellCheck={false}
                 />
+                <button
+                  type="button"
+                  onClick={() => send()}
+                  disabled={!input.trim() || loading}
+                  className="w-8 h-8 rounded-lg bg-accent text-background flex items-center justify-center disabled:opacity-30 disabled:cursor-not-allowed hover:bg-text-primary transition-colors"
+                  aria-label="send"
+                >
+                  →
+                </button>
               </div>
               <p className="mt-2 font-mono text-[9px] text-text-muted text-center">
                 {dict.chat.poweredBy}
