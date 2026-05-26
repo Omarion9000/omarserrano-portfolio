@@ -35,6 +35,8 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
           height={250}
           anim="spin"
           priority
+          floatDelay={2}
+          floatDuration={11}
         />
       </motion.div>
 
@@ -50,6 +52,8 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
           width={230}
           height={230}
           anim="sway"
+          floatDelay={0}
+          floatDuration={9}
         />
       </motion.div>
 
@@ -65,6 +69,8 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
           width={190}
           height={190}
           anim="wobble"
+          floatDelay={1.5}
+          floatDuration={7}
         />
       </motion.div>
 
@@ -99,7 +105,7 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0, rotate: -4 }}
         transition={{ duration: 0.6, delay: 0.4 }}
-        className="absolute right-[16%] top-[64%]"
+        className="absolute right-[8%] top-[64%]"
       >
         <AnimatedObject
           src="/objects/ps5-controller.png"
@@ -107,6 +113,8 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
           width={200}
           height={200}
           anim="gaming"
+          floatDelay={1}
+          floatDuration={8}
         />
       </motion.div>
 
@@ -132,6 +140,8 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
           width={150}
           height={150}
           anim="shake"
+          floatDelay={0.8}
+          floatDuration={10}
         />
       </motion.div>
 

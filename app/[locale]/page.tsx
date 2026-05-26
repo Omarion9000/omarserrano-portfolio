@@ -1,5 +1,6 @@
 import { getDictionary } from "@/lib/i18n";
 import IntroAnimation from "@/components/IntroAnimation";
+import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import About from "@/components/About";
@@ -17,17 +18,19 @@ export default function HomePage({ params }: { params: { locale: string } }) {
   return (
     <>
       <IntroAnimation />
-      <Navbar locale={params.locale} dict={dict} />
-      <main>
-        <Hero dict={dict} locale={params.locale} />
-        <About dict={dict} />
-        <Work dict={dict} />
-        <Stack dict={dict} />
-        <Services dict={dict} />
-        <Resume dict={dict} locale={params.locale} />
-        <Contact dict={dict} locale={params.locale} />
-      </main>
-      <Footer dict={dict} />
+      <SmoothScroll>
+        <Navbar locale={params.locale} dict={dict} />
+        <main>
+          <Hero dict={dict} locale={params.locale} />
+          <About dict={dict} />
+          <Work dict={dict} />
+          <Stack dict={dict} />
+          <Services dict={dict} />
+          <Resume dict={dict} locale={params.locale} />
+          <Contact dict={dict} locale={params.locale} />
+        </main>
+        <Footer dict={dict} />
+      </SmoothScroll>
       <ChatWidget dict={dict} />
     </>
   );

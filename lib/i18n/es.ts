@@ -17,7 +17,7 @@ const es = {
     role: "Developer IA & Automatización",
     location: "Toronto, GTA",
     languages: "EN · ES · FR",
-    tagline: "Pienso. Construyo. Entrego.",
+    tagline: "Diseñando sistemas. Entregando experiencias.",
     whoami: "Developer bilingüe · Toronto",
     interests: "IA · automatización · SaaS · voice agents",
     playlistTitle: "Building in public",
