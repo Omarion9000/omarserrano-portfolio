@@ -122,7 +122,7 @@ export default function CollageObjects({ dict }: { dict: Dictionary }) {
             alt="PS5 controller"
             width={200}
             height={200}
-            anim="gaming"
+            anim="sway"
             floatDelay={1}
             floatDuration={8}
           />
