@@ -65,7 +65,7 @@ const en = {
         },
         {
           title: "AI & Automation Developer",
-          meta: "Self-employed · 2024–present · Toronto",
+          meta: "Self-employed · 2025–present · Toronto",
           current: true,
         },
       ],

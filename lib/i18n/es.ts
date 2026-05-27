@@ -65,7 +65,7 @@ const es = {
         },
         {
           title: "Developer IA & Automatización",
-          meta: "Autónomo · 2024–presente · Toronto",
+          meta: "Autónomo · 2025–presente · Toronto",
           current: true,
         },
       ],
