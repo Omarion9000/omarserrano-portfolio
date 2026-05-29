@@ -16,11 +16,34 @@ export async function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }
 
+const OG_LOCALES: Record<string, string> = {
+  en: "en_CA",
+  es: "es_MX",
+  fr: "fr_CA",
+};
+
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const dict = getDictionary(params.locale);
+  const ogLocale = OG_LOCALES[params.locale] ?? OG_LOCALES.en;
+  const url = `https://www.omarserrano.ca/${params.locale}`;
+
   return {
+    metadataBase: new URL("https://www.omarserrano.ca"),
     title: dict.meta.title,
     description: dict.meta.description,
+    openGraph: {
+      title: dict.meta.title,
+      description: dict.meta.description,
+      url,
+      siteName: "Omar Serrano",
+      type: "website",
+      locale: ogLocale,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: dict.meta.title,
+      description: dict.meta.description,
+    },
   };
 }
 
