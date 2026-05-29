@@ -177,10 +177,10 @@ const fr = {
       {
         key: "pokemon",
         title: "Pokémon Battle Arena",
-        desc: "Projet perso : jeu de combat SPA avec logique basée sur les stats, recherche et filtres par type. React + TypeScript + Tailwind.",
-        tag: "Side project · TS",
-        href: "https://pokemon.net.omarserrano.ca",
-        image: "/work/pokemon.webp",
+        desc: "Projet perso : simulateur de combat Gen 1 au tour par tour avec interface holographique style JCC. Next.js + XState + TypeScript.",
+        tag: "Projet perso · Next.js · XState",
+        href: "https://pokemon.omarserrano.ca",
+        image: "/work/pokemon-arena.png",
       },
       {
         key: "qr",
