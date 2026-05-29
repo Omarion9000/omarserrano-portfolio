@@ -201,6 +201,88 @@ const es = {
     badge: "AZ-900 certificado",
     summary:
       "Developer de IA & Automatización en Toronto. Bilingüe EN/ES, FR básico. Disponible para trabajo remoto.",
+    page: {
+      role: "Desarrollador de IA y Automatización · Ingeniero Full-Stack",
+      location: "Toronto, ON",
+      downloadCta: "↓ Descargar PDF",
+      sections: {
+        summary: "Resumen",
+        skills: "Habilidades",
+        projects: "Proyectos destacados",
+        experience: "Experiencia",
+        education: "Educación y certificaciones",
+      },
+      summaryBody:
+        "Desarrollador full-stack bilingüe (EN/ES) especializado en integración de IA y automatización de flujos de trabajo. Construí y lancé un SaaS en producción — PRAVÉ (plataforma de simulación CRS de Express Entry canadiense con facturación por suscripción en Stripe) — y actualmente desarrollo Francaisia (plataforma de preparación para el examen TEF Canada de francés, con lanzamiento en 2026). Con experiencia en asistentes virtuales de IA usando la API de Anthropic Claude. Certificado en Microsoft Azure Fundamentals. Ayudo a negocios a ahorrar más de 10 horas por semana con chatbots, voice agents y aplicaciones web a medida. Basado en Toronto, disponible para trabajo remoto a nivel mundial.",
+      skills: [
+        { label: "Frontend", value: "Next.js 14, React 18, TypeScript, Tailwind CSS, framer-motion" },
+        { label: "Backend", value: "Node.js, Express, APIs REST, PostgreSQL, Supabase" },
+        { label: "IA y automatización", value: "API de Anthropic Claude, OpenAI, n8n, Make, Vapi, Twilio" },
+        { label: "Cloud y DevOps", value: "Microsoft Azure (AZ-900), Vercel, Render, Git, Linux" },
+        { label: "Idiomas", value: "Inglés (Fluido) · Español (Nativo) · Francés (Básico)" },
+      ],
+      projects: [
+        {
+          title: "PRAVÉ — Simulación CRS de Express Entry",
+          href: "https://www.pravepath.ca",
+          linkLabel: "pravepath.ca",
+          desc:
+            "SaaS en producción construido en solitario con facturación Stripe, auth Supabase + RLS, interfaz bilingüe EN/ES y análisis de escenarios potenciado por la API de Claude.",
+        },
+        {
+          title: "Sofia — Recepcionista de IA bilingüe",
+          href: null,
+          linkLabel: "demo",
+          desc:
+            "Recepcionista virtual de IA con la API de Anthropic Claude, contexto de conversación, rate limiting y detección automática bilingüe EN/ES.",
+        },
+        {
+          title: "Jesse Merineau — Sitio web musical",
+          href: "https://jessemerineau.net.omarserrano.ca",
+          linkLabel: "en vivo",
+          desc: "Sitio web para cliente con integración de Spotify, entregado vía Meraki Creative Lab.",
+        },
+      ],
+      experience: [
+        {
+          title: "Fundador · PRAVÉ y Francaisia (Autónomo)",
+          dates: "Mayo 2025 – Presente",
+          location: "Toronto, ON, Canadá",
+          bullets: [
+            "Fundé y construí dos plataformas SaaS de nivel producción de extremo a extremo: PRAVÉ (optimización de CRS para inmigración canadiense, en producción con facturación Stripe) y Francaisia (preparación para el TEF Canada, prelanzamiento)",
+            "Arquitecté el stack completo del producto: Next.js 16 App Router, Supabase (auth + Postgres + RLS), integración de Stripe en producción, API de Anthropic Claude para funciones de IA, desplegado en Vercel",
+            "Diseñé y lancé una UX trilingüe (EN/ES/FR) con middleware de i18n, motor propio de cálculo de CRS y análisis de escenarios con IA",
+            "Gestioné las operaciones completas del negocio: estrategia de producto, legal/compliance (PIPEDA, CICC), infraestructura de pagos, producción de contenido y marketing prelanzamiento",
+          ],
+        },
+        {
+          title: "Desarrollador Web · Meraki Creative Lab",
+          dates: "Mar. 2023 – Abr. 2025",
+          location: "Remoto · Ciudad de México, México",
+          bullets: [
+            "Lideré el desarrollo de proyectos web para clientes con Next.js, React, TypeScript y Node.js, entregando múltiples sitios en producción de extremo a extremo",
+            "Diseñé e implementé APIs REST y esquemas de base de datos con Node.js, Express y PostgreSQL",
+            "Colaboré en entorno Agile con flujo de trabajo en Git y despliegue continuo vía Vercel",
+            "Coordiné alcance, plazos y revisiones directamente con clientes en inglés y español",
+          ],
+        },
+        {
+          title: "Asociado de Atención al Cliente · The Rec Room",
+          dates: "Ago. 2023 – Mayo 2026",
+          location: "Toronto, ON, Canadá · medio tiempo",
+          bullets: [
+            "Brindé atención al cliente bilingüe EN/ES en un local de entretenimiento de alto volumen",
+            "Lo mantuve en paralelo a mis estudios a tiempo completo y mis roles de desarrollador; demostré confiabilidad y gestión del tiempo",
+          ],
+        },
+      ],
+      education: [
+        { name: "Diploma en Programación Informática", body: "Georgian College · Sept. 2023 – Abr. 2025 · Toronto, ON, Canadá" },
+        { name: "Licenciatura en Comercio Internacional", body: "Universidad ESCI · 2018 – 2022 · México" },
+        { name: "AZ-900 Azure Fundamentals", body: "Microsoft" },
+        { name: null, body: "Diploma de Desarrollador Frontend · Certificaciones de freeCodeCamp (Algoritmos y Estructuras de Datos en JavaScript, Diseño Web Responsive)" },
+      ],
+    },
   },
   contact: {
     heading: "Contacto",
