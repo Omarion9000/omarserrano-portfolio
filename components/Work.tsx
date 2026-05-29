@@ -1,8 +1,39 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n";
+import { SOFIA_OPEN_EVENT } from "@/components/Sofia/Modal";
 
 const ROTATIONS = ["-rotate-2", "rotate-3", "-rotate-1", "rotate-2", "-rotate-3"];
+
+const POLAROID_CLASSES =
+  "group relative bg-background p-3 shadow-polaroid hover:rotate-0 hover:-translate-y-2 hover:scale-105 hover:z-10 transition-all duration-300";
+
+type WorkItem = Dictionary["work"]["items"][number];
+
+function PolaroidInner({ item }: { item: WorkItem }) {
+  return (
+    <>
+      <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-accent shadow-[0_1px_2px_rgba(0,0,0,0.3)] z-10" />
+
+      <div className="relative w-full aspect-[4/3] bg-editor-surface overflow-hidden rounded-sm">
+        <Image
+          src={item.image}
+          alt={item.title}
+          fill
+          className="object-cover"
+          sizes="(max-width: 768px) 100vw, 33vw"
+        />
+      </div>
+
+      <div className="pt-3 pb-1 text-center">
+        <div className="font-medium text-sm text-text-primary">{item.title}</div>
+        <div className="text-[10px] font-mono text-text-muted mt-0.5">{item.tag}</div>
+      </div>
+    </>
+  );
+}
 
 export default function Work({ dict }: { dict: Dictionary }) {
   return (
@@ -17,6 +48,22 @@ export default function Work({ dict }: { dict: Dictionary }) {
         <div className="mt-10 cork-board rounded-xl p-6 sm:p-8 md:p-12 shadow-paper">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
             {dict.work.items.map((item, i) => {
+              const rotation = ROTATIONS[i % ROTATIONS.length];
+              const className = `${POLAROID_CLASSES} ${rotation} text-left`;
+
+              if (item.key === "sofia") {
+                return (
+                  <button
+                    key={item.key}
+                    type="button"
+                    onClick={() => window.dispatchEvent(new Event(SOFIA_OPEN_EVENT))}
+                    className={className}
+                  >
+                    <PolaroidInner item={item} />
+                  </button>
+                );
+              }
+
               const isExternal = item.href.startsWith("http");
               return (
                 <Link
@@ -24,24 +71,9 @@ export default function Work({ dict }: { dict: Dictionary }) {
                   href={item.href}
                   target={isExternal ? "_blank" : undefined}
                   rel={isExternal ? "noopener noreferrer" : undefined}
-                  className={`group relative bg-background p-3 shadow-polaroid ${ROTATIONS[i % ROTATIONS.length]} hover:rotate-0 hover:-translate-y-2 hover:scale-105 hover:z-10 transition-all duration-300`}
+                  className={className}
                 >
-                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-accent shadow-[0_1px_2px_rgba(0,0,0,0.3)] z-10" />
-
-                  <div className="relative w-full aspect-[4/3] bg-editor-surface overflow-hidden rounded-sm">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  </div>
-
-                  <div className="pt-3 pb-1 text-center">
-                    <div className="font-medium text-sm text-text-primary">{item.title}</div>
-                    <div className="text-[10px] font-mono text-text-muted mt-0.5">{item.tag}</div>
-                  </div>
+                  <PolaroidInner item={item} />
                 </Link>
               );
             })}

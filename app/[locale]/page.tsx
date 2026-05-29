@@ -11,6 +11,7 @@ import Services from "@/components/Services";
 import Resume from "@/components/Resume/FolderManila";
 import Contact from "@/components/Contact";
 import ChatWidget from "@/components/ChatWidget";
+import SofiaModal from "@/components/Sofia/Modal";
 import Footer from "@/components/Footer";
 
 export default function HomePage({ params }: { params: { locale: string } }) {
@@ -34,6 +35,7 @@ export default function HomePage({ params }: { params: { locale: string } }) {
         <Footer dict={dict} />
       </SmoothScroll>
       <ChatWidget dict={dict} />
+      <SofiaModal dict={dict} />
     </>
   );
 }
