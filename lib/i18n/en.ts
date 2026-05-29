@@ -171,7 +171,7 @@ const en = {
         title: "Jesse Merineau",
         desc: "Music artist website. Spotify embed integration, responsive multi-section layout. Client work delivered via Meraki Creative Lab.",
         tag: "Client work · Music",
-        href: "https://jessemerineau.net.omarserrano.ca",
+        href: "https://jessemerineau.omarserrano.ca",
         image: "/work/jesse-merineau.webp",
       },
       {
@@ -238,7 +238,7 @@ const en = {
         },
         {
           title: "Jesse Merineau — Music Website",
-          href: "https://jessemerineau.net.omarserrano.ca",
+          href: "https://jessemerineau.omarserrano.ca",
           linkLabel: "live",
           desc: "Client website with Spotify integration, delivered via Meraki Creative Lab.",
         },
