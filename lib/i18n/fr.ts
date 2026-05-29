@@ -219,7 +219,7 @@ const fr = {
         { label: "Backend", value: "Node.js, Express, API REST, PostgreSQL, Supabase" },
         { label: "IA et automatisation", value: "API Anthropic Claude, OpenAI, n8n, Make, Vapi, Twilio" },
         { label: "Infonuagique et DevOps", value: "Microsoft Azure (AZ-900), Vercel, Render, Git, Linux" },
-        { label: "Langues", value: "Anglais (Courant) · Espagnol (Natif) · Français (De base)" },
+        { label: "Langues", value: "Anglais (Courant) · Espagnol (Natif) · Français (Niveau de base)" },
       ],
       projects: [
         {
@@ -250,8 +250,8 @@ const fr = {
           location: "Toronto, ON, Canada",
           bullets: [
             "J'ai fondé et bâti deux plateformes SaaS de niveau production de bout en bout : PRAVÉ (optimisation du CRS pour l'immigration canadienne, en production avec facturation Stripe) et Francaisia (préparation au TEF Canada, en prélancement)",
-            "J'ai architecturé la pile complète du produit : Next.js 16 App Router, Supabase (auth + Postgres + RLS), intégration Stripe en production, API Anthropic Claude pour les fonctionnalités d'IA, déployé sur Vercel",
-            "J'ai conçu et livré une UX trilingue (EN/ES/FR) avec intergiciel i18n, moteur de calcul CRS personnalisé et analyse de scénarios par IA",
+            "J'ai architecturé le full stack du produit : Next.js 16 App Router, Supabase (auth + Postgres + RLS), intégration Stripe en production, API Anthropic Claude pour les fonctionnalités d'IA, déployé sur Vercel",
+            "J'ai conçu et livré une UX trilingue (EN/ES/FR) avec middleware i18n, moteur de calcul CRS personnalisé et analyse de scénarios par IA",
             "J'ai géré l'ensemble des opérations : stratégie produit, conformité légale (PIPEDA, CICC), infrastructure de paiement, production de contenu et marketing prélancement",
           ],
         },
