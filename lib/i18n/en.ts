@@ -177,10 +177,10 @@ const en = {
       {
         key: "pokemon",
         title: "Pokémon Battle Arena",
-        desc: "Side project: single-page battle game with stat-based logic, search and type filtering. React + TypeScript + Tailwind.",
-        tag: "Side project · TS",
-        href: "https://pokemon.net.omarserrano.ca",
-        image: "/work/pokemon.webp",
+        desc: "Side project: Gen 1 turn-based battle simulator with TCG-style holographic UI. Next.js + XState + TypeScript.",
+        tag: "Side project · Next.js · XState",
+        href: "https://pokemon.omarserrano.ca",
+        image: "/work/pokemon-arena.png",
       },
       {
         key: "qr",
