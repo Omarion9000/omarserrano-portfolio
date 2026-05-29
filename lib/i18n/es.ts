@@ -227,7 +227,7 @@ const es = {
           href: "https://www.pravepath.ca",
           linkLabel: "pravepath.ca",
           desc:
-            "SaaS en producción construido en solitario con facturación Stripe, auth Supabase + RLS, interfaz bilingüe EN/ES y análisis de escenarios potenciado por la API de Claude.",
+            "SaaS en producción construido solo con facturación Stripe, auth Supabase + RLS, interfaz bilingüe EN/ES y análisis de escenarios potenciado por la API de Claude.",
         },
         {
           title: "Sofia — Recepcionista de IA bilingüe",
@@ -269,7 +269,7 @@ const es = {
         {
           title: "Asociado de Atención al Cliente · The Rec Room",
           dates: "Ago. 2023 – Mayo 2026",
-          location: "Toronto, ON, Canadá · medio tiempo",
+          location: "Toronto, ON, Canadá · tiempo parcial",
           bullets: [
             "Brindé atención al cliente bilingüe EN/ES en un local de entretenimiento de alto volumen",
             "Lo mantuve en paralelo a mis estudios a tiempo completo y mis roles de desarrollador; demostré confiabilidad y gestión del tiempo",
