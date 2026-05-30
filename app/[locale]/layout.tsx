@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter, JetBrains_Mono, Caveat } from "next/font/google";
 import { notFound } from "next/navigation";
 import { getDictionary, LOCALES } from "@/lib/i18n";
+import CustomCursor from "@/components/CustomCursor";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
@@ -61,6 +62,7 @@ export default function LocaleLayout({
   return (
     <html lang={params.locale} className={`${inter.variable} ${jetbrains.variable} ${caveat.variable}`}>
       <body className="bg-background text-text-primary font-sans antialiased">
+        <CustomCursor />
         <div className="relative min-h-screen paper-grid paper-noise">{children}</div>
       </body>
     </html>
