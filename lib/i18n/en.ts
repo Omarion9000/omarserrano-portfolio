@@ -26,7 +26,7 @@ const en = {
     ticketEst: "EST. 2019 → PRESENT",
     ticketLocation: "Toronto · Remote · Worldwide",
     intro:
-      "I help Toronto businesses save 10+ hours per week with bilingual chatbots, voice agents, and smart workflow automations. Native EN/ES — based in the GTA.",
+      "I help Toronto businesses save 10+ hours per week with bilingual chatbots, voice agents, and smart workflow automations. Bilingual EN/ES — based in the GTA.",
     sparkText: "I build with AI,",
     sparkSuffix: "prototyping ideas at the edge of what's possible.",
     middleText: "I turn rough ideas",
@@ -84,8 +84,8 @@ const en = {
         title: "frontend",
         color: "amber",
         items: [
-          { name: "Next.js 14", icon: "next" },
-          { name: "React 18", icon: "react" },
+          { name: "Next.js", icon: "next" },
+          { name: "React", icon: "react" },
           { name: "TypeScript", icon: "ts" },
           { name: "Tailwind CSS", icon: "tailwind" },
           { name: "framer-motion", icon: "motion" },
@@ -151,6 +151,14 @@ const en = {
     subheading: "Things I've built and shipped.",
     items: [
       {
+        key: "francaisia",
+        title: "Francaisia",
+        desc: "TEF Canada French exam prep platform. B2/CLB7-targeted with 92 lessons (A0–B2), AI-generated voice audio, and full i18n. Next.js 16 + Supabase + Claude API + Stripe billing.",
+        tag: "SaaS · Production · 2026",
+        href: "https://francaisia.com",
+        image: "/work/francaisia.png",
+      },
+      {
         key: "prave",
         title: "PRAVÉ",
         desc: "Production SaaS — Express Entry CRS simulation platform with Stripe billing, Supabase auth, and AI-powered scenario analysis. Bilingual EN/ES.",
@@ -213,15 +221,22 @@ const en = {
         education: "Education & Certifications",
       },
       summaryBody:
-        "Bilingual (EN/ES) full-stack developer specialized in AI integration and workflow automation. Built and shipped production SaaS — PRAVÉ (Canadian Express Entry CRS simulation platform with Stripe subscription billing) — and currently building Francaisia (TEF Canada French exam prep platform, launching 2026). Experienced with AI virtual assistants using Anthropic Claude API. Microsoft Azure Fundamentals certified. I help businesses save 10+ hours per week with chatbots, voice agents, and custom web applications. Toronto-based, available for remote work worldwide.",
+        "Bilingual EN/ES full-stack developer specialized in AI integration and workflow automation. Currently building Francaisia (TEF Canada French exam prep platform, soft-launch July 2026) and PRAVÉ (live production SaaS for Canadian Express Entry CRS simulation with Stripe subscription billing). Experienced with AI virtual assistants using Anthropic Claude API. Microsoft Azure Fundamentals certified. I help businesses save 10+ hours per week with chatbots, voice agents, and custom web applications. Toronto-based, available for remote work worldwide.",
       skills: [
-        { label: "Frontend", value: "Next.js 14, React 18, TypeScript, Tailwind CSS, framer-motion" },
+        { label: "Frontend", value: "Next.js, React, TypeScript, Tailwind CSS, framer-motion, XState" },
         { label: "Backend", value: "Node.js, Express, REST APIs, PostgreSQL, Supabase" },
         { label: "AI & Automation", value: "Anthropic Claude API, OpenAI, n8n, Make, Vapi, Twilio" },
         { label: "Cloud & DevOps", value: "Microsoft Azure (AZ-900), Vercel, Render, Git, Linux" },
         { label: "Languages", value: "English (Fluent) · Spanish (Native) · French (Basic)" },
       ],
       projects: [
+        {
+          title: "Francaisia — TEF Canada French Exam Prep",
+          href: "https://francaisia.com",
+          linkLabel: "francaisia.com",
+          desc:
+            "B2/CLB7-targeted French learning platform with 92 lessons (A0–B2), AI-generated voice audio, Quebec narrative arc, Stripe billing, and full i18n. Next.js 16 + Supabase + Claude API.",
+        },
         {
           title: "PRAVÉ — Express Entry CRS Simulation",
           href: "https://www.pravepath.ca",
@@ -237,10 +252,18 @@ const en = {
             "AI virtual receptionist with Anthropic Claude API, conversation context, rate limiting, and bilingual EN/ES auto-detection.",
         },
         {
+          title: "Pokémon Battle Arena",
+          href: "https://pokemon.omarserrano.ca",
+          linkLabel: "pokemon.omarserrano.ca",
+          desc:
+            "Gen 1 turn-based battle simulator with TCG holographic UI. Next.js 14 + XState v5 + TypeScript. 77 tests, 151 Pokémon prerendered as Server Components.",
+        },
+        {
           title: "Jesse Merineau — Music Website",
           href: "https://jessemerineau.omarserrano.ca",
-          linkLabel: "live",
-          desc: "Client website with Spotify integration, delivered via Meraki Creative Lab.",
+          linkLabel: "jessemerineau.omarserrano.ca",
+          desc:
+            "Multi-page artist site with React Router, Spotify embed, and YouTube featured video. Vite + React + Tailwind.",
         },
       ],
       experience: [
