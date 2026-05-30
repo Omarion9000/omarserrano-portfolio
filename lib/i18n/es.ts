@@ -84,8 +84,8 @@ const es = {
         title: "frontend",
         color: "amber",
         items: [
-          { name: "Next.js 14", icon: "next" },
-          { name: "React 18", icon: "react" },
+          { name: "Next.js", icon: "next" },
+          { name: "React", icon: "react" },
           { name: "TypeScript", icon: "ts" },
           { name: "Tailwind CSS", icon: "tailwind" },
           { name: "framer-motion", icon: "motion" },
@@ -151,6 +151,14 @@ const es = {
     subheading: "Cosas que he construido y entregado.",
     items: [
       {
+        key: "francaisia",
+        title: "Francaisia",
+        desc: "Plataforma de preparación para el examen TEF Canadá. Orientada a B2/CLB7 con 92 lecciones (A0–B2), audio generado con IA e i18n completo. Next.js 16 + Supabase + Claude API + Stripe.",
+        tag: "SaaS · Producción · 2026",
+        href: "https://francaisia.com",
+        image: "/work/francaisia.png",
+      },
+      {
         key: "prave",
         title: "PRAVÉ",
         desc: "SaaS en producción — plataforma de simulación CRS de Express Entry con billing Stripe, auth Supabase y análisis de escenarios con IA. Bilingüe EN/ES.",
@@ -213,15 +221,22 @@ const es = {
         education: "Educación y certificaciones",
       },
       summaryBody:
-        "Desarrollador full-stack bilingüe (EN/ES) especializado en integración de IA y automatización de flujos de trabajo. Construí y lancé un SaaS en producción — PRAVÉ (plataforma de simulación CRS de Express Entry canadiense con facturación por suscripción en Stripe) — y actualmente desarrollo Francaisia (plataforma de preparación para el examen TEF Canada de francés, con lanzamiento en 2026). Con experiencia en asistentes virtuales de IA usando la API de Anthropic Claude. Certificado en Microsoft Azure Fundamentals. Ayudo a negocios a ahorrar más de 10 horas por semana con chatbots, voice agents y aplicaciones web a medida. Basado en Toronto, disponible para trabajo remoto a nivel mundial.",
+        "Desarrollador full-stack bilingüe EN/ES especializado en integración de IA y automatización de flujos de trabajo. Actualmente desarrollando Francaisia (plataforma de preparación para el examen TEF Canadá de francés, soft-launch en julio 2026) y PRAVÉ (SaaS en producción para simulación del CRS de Express Entry canadiense, con facturación por suscripción en Stripe). Con experiencia en asistentes virtuales de IA usando la API de Anthropic Claude. Certificado en Microsoft Azure Fundamentals. Ayudo a negocios a ahorrar más de 10 horas por semana con chatbots, voice agents y aplicaciones web a medida. Basado en Toronto, disponible para trabajo remoto a nivel mundial.",
       skills: [
-        { label: "Frontend", value: "Next.js 14, React 18, TypeScript, Tailwind CSS, framer-motion" },
+        { label: "Frontend", value: "Next.js, React, TypeScript, Tailwind CSS, framer-motion, XState" },
         { label: "Backend", value: "Node.js, Express, APIs REST, PostgreSQL, Supabase" },
         { label: "IA y automatización", value: "API de Anthropic Claude, OpenAI, n8n, Make, Vapi, Twilio" },
         { label: "Cloud y DevOps", value: "Microsoft Azure (AZ-900), Vercel, Render, Git, Linux" },
         { label: "Idiomas", value: "Inglés (Fluido) · Español (Nativo) · Francés (Básico)" },
       ],
       projects: [
+        {
+          title: "Francaisia — Preparación para el TEF Canadá",
+          href: "https://francaisia.com",
+          linkLabel: "francaisia.com",
+          desc:
+            "Plataforma de aprendizaje de francés orientada a B2/CLB7 con 92 lecciones (A0–B2), audio de voz generado con IA, arco narrativo quebequense, facturación Stripe e i18n completo. Next.js 16 + Supabase + Claude API.",
+        },
         {
           title: "PRAVÉ — Simulación CRS de Express Entry",
           href: "https://www.pravepath.ca",
@@ -237,10 +252,18 @@ const es = {
             "Recepcionista virtual de IA con la API de Anthropic Claude, contexto de conversación, rate limiting y detección automática bilingüe EN/ES.",
         },
         {
+          title: "Pokémon Battle Arena",
+          href: "https://pokemon.omarserrano.ca",
+          linkLabel: "pokemon.omarserrano.ca",
+          desc:
+            "Simulador de batalla Gen 1 por turnos con UI holográfica estilo TCG. Next.js 14 + XState v5 + TypeScript. 77 tests, 151 Pokémon prerenderizados como Server Components.",
+        },
+        {
           title: "Jesse Merineau — Sitio web musical",
           href: "https://jessemerineau.omarserrano.ca",
-          linkLabel: "en vivo",
-          desc: "Sitio web para cliente con integración de Spotify, entregado vía Meraki Creative Lab.",
+          linkLabel: "jessemerineau.omarserrano.ca",
+          desc:
+            "Sitio multipágina de artista con React Router, Spotify embed y video destacado de YouTube. Vite + React + Tailwind.",
         },
       ],
       experience: [
