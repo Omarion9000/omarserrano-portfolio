@@ -43,8 +43,11 @@ export type Dict = {
     intro: string;
     ctaProject: string;
     ctaResume: string;
+    chartTitle: string;
     chartCaption: string;
-    chartLabels: { baseline: string; gold: string; energy: string; other: string; latest: string };
+    seriesAll: string;
+    seriesCore: string;
+    tariffMarker: string;
   };
   project: {
     label: string;
@@ -62,6 +65,31 @@ export type Dict = {
     tools: string[];
     openDashboard: string;
     openRepo: string;
+    readStory: string;
+    loadDashboard: string;
+    loadNote: string;
+  };
+  story: {
+    metaTitle: string;
+    label: string;
+    title: string;
+    dek: string;
+    back: string;
+    steps: { kicker: string; title: string; verdict?: string; body: string[] }[];
+    charts: {
+      line: { title: string };
+      sides: { title: string; us: string; row: string; base: string; latest: string; unit: string };
+      waterfall: { title: string; labels: string[] };
+      offset: { title: string; redirected: string; notRedirected: string };
+      pairs: { title: string; band: string; mean: string };
+      exposure: { title: string; base: string; latest: string };
+    };
+    sectors: Record<string, string>;
+    limitsTitle: string;
+    limits: string[];
+    methodTitle: string;
+    method: string;
+    source: string;
   };
   skills: {
     heading: string;

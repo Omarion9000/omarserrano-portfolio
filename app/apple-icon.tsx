@@ -17,7 +17,7 @@ export default async function AppleIcon() {
         style={{
           width: "100%",
           height: "100%",
-          background: "#1B1A17",
+          background: "#0B1A2C",
           color: "#FAF7F2",
           fontFamily: "Inter",
           fontWeight: 700,
@@ -29,7 +29,7 @@ export default async function AppleIcon() {
         }}
       >
         <span>O</span>
-        <span style={{ color: "#D9572B" }}>.</span>
+        <span style={{ color: "#C9A96E" }}>.</span>
       </div>
     ),
     {

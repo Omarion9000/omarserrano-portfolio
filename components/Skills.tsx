@@ -1,22 +1,22 @@
 import type { Dictionary } from "@/lib/i18n";
 import Section from "./Section";
+import Reveal from "./Reveal";
 
 export default function Skills({ dict }: { dict: Dictionary }) {
   return (
-    <Section id="skills" title={dict.skills.heading}>
-      <div className="grid gap-6 md:grid-cols-3">
-        {dict.skills.groups.map((g) => (
-          <div key={g.title} className="rounded-xl border border-line bg-card p-6">
-            <h3 className="font-mono text-xs uppercase tracking-[0.12em] text-faint">{g.title}</h3>
-            <ul className="mt-4 space-y-2.5">
+    <Section id="skills" title={dict.skills.heading} tone="mist">
+      <div className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-3">
+        {dict.skills.groups.map((g, i) => (
+          <Reveal key={g.title} delay={i * 100} className="bg-white p-8">
+            <h3 className="text-xs font-semibold uppercase tracking-label text-gold">{g.title}</h3>
+            <ul className="mt-5 space-y-3">
               {g.items.map((item) => (
-                <li key={item} className="flex items-start gap-3 text-[15px]">
-                  <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                <li key={item} className="border-b border-line/70 pb-3 text-[15px] last:border-0 last:pb-0">
                   {item}
                 </li>
               ))}
             </ul>
-          </div>
+          </Reveal>
         ))}
       </div>
     </Section>

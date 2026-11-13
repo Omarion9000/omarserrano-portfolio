@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@fontsource-variable/inter";
-import "@fontsource-variable/jetbrains-mono";
+import "@fontsource-variable/source-serif-4/opsz.css";
 import { notFound } from "next/navigation";
 import { getDictionary, LOCALES } from "@/lib/i18n";
 
@@ -47,7 +47,7 @@ export default function LocaleLayout({
 
   return (
     <html lang={params.locale}>
-      <body className="bg-paper font-sans text-ink antialiased">{children}</body>
+      <body className="bg-white font-sans text-ink antialiased">{children}</body>
     </html>
   );
 }

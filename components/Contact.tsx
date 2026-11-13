@@ -1,7 +1,7 @@
 import type { Dictionary } from "@/lib/i18n";
 import { LINKS } from "@/lib/links";
-import Section from "./Section";
-import { IconChart, IconGitHub, IconLinkedIn, IconMail } from "./Icons";
+import Reveal from "./Reveal";
+import { IconArrow, IconChart, IconGitHub, IconLinkedIn, IconMail } from "./Icons";
 
 export default function Contact({ dict }: { dict: Dictionary }) {
   const c = dict.contact;
@@ -13,26 +13,32 @@ export default function Contact({ dict }: { dict: Dictionary }) {
   ];
 
   return (
-    <Section id="contact" title={c.heading} sub={c.body}>
-      <ul className="grid gap-4 sm:grid-cols-2">
-        {items.map(({ href, label, detail, Icon, external }) => (
-          <li key={label}>
-            <a
-              href={href}
-              {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
-              className="flex h-full items-center gap-4 rounded-xl border border-line bg-card p-5 transition-colors hover:border-ink"
-            >
-              <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-paper text-ink">
-                <Icon className="h-5 w-5" />
-              </span>
-              <span className="min-w-0">
-                <span className="block font-medium">{label}</span>
-                <span className="block truncate font-mono text-xs text-muted">{detail}</span>
-              </span>
-            </a>
-          </li>
-        ))}
-      </ul>
-    </Section>
+    <section id="contact" className="bg-navy-900 py-20 text-white md:py-28">
+      <div className="mx-auto max-w-page px-5 sm:px-8">
+        <Reveal>
+          <h2 className="font-serif text-4xl font-medium tracking-tight sm:text-5xl">{c.heading}</h2>
+          <div className="mt-5 h-px w-12 bg-gold-light" />
+          <p className="mt-5 max-w-2xl text-lg text-white/70">{c.body}</p>
+        </Reveal>
+        <ul className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 sm:grid-cols-2">
+          {items.map(({ href, label, detail, Icon, external }) => (
+            <li key={label} className="bg-navy-900">
+              <a
+                href={href}
+                {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                className="group flex items-center gap-5 p-7 transition-colors hover:bg-white/[0.04]"
+              >
+                <Icon className="h-5 w-5 shrink-0 text-gold-light" />
+                <span className="min-w-0 flex-1">
+                  <span className="block font-medium">{label}</span>
+                  <span className="block truncate text-sm text-white/55">{detail}</span>
+                </span>
+                <IconArrow className="h-4 w-4 text-white/30 transition-colors group-hover:text-gold-light" />
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </section>
   );
 }

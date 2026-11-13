@@ -15,8 +15,8 @@ export default function HomePage({ params }: { params: { locale: string } }) {
     <>
       <Navbar locale={params.locale} dict={dict} />
       <main>
-        <Hero dict={dict} />
-        <FeaturedProject dict={dict} />
+        <Hero dict={dict} locale={params.locale} />
+        <FeaturedProject dict={dict} locale={params.locale} />
         <Skills dict={dict} />
         <Experience dict={dict} />
         <Education dict={dict} />

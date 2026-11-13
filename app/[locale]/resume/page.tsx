@@ -20,7 +20,7 @@ export function generateMetadata({ params }: { params: { locale: string } }): Me
 
 function H2({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mb-2 border-b border-ink/80 pb-1 text-[13px] font-semibold uppercase tracking-[0.08em] print:mb-1.5 print:text-[10.5pt]">
+    <h2 className="mb-2 border-b border-navy-900/80 pb-1 text-[13px] font-semibold uppercase tracking-[0.08em] print:mb-1.5 print:text-[10.5pt]">
       {children}
     </h2>
   );
@@ -29,7 +29,7 @@ function H2({ children }: { children: React.ReactNode }) {
 export default function ResumePage({ params }: { params: { locale: string } }) {
   const dict = getDictionary(params.locale);
   const r = dict.resume;
-  const linkClass = "hover:text-blue print:text-ink";
+  const linkClass = "hover:text-gold print:text-ink";
 
   return (
     <>
@@ -43,17 +43,17 @@ export default function ResumePage({ params }: { params: { locale: string } }) {
           <a
             href={LINKS.resumePdf}
             download="Omar-Serrano-Resume.pdf"
-            className="inline-flex items-center gap-2 rounded-md bg-ink px-4 py-2 text-sm font-medium text-paper hover:bg-accent-dark"
+            className="inline-flex items-center gap-2 rounded-md bg-navy-900 px-4 py-2 text-sm font-medium text-white hover:bg-navy-700"
           >
             <IconDownload />
             {r.download}
           </a>
         </div>
 
-        <article className="rounded-xl border border-line bg-card p-6 text-[14.5px] leading-relaxed sm:p-10 print:rounded-none print:border-0 print:p-0 print:text-[9pt] print:leading-[1.3]">
+        <article className="rounded-xl border border-line bg-white p-6 text-[14.5px] leading-relaxed sm:p-10 print:rounded-none print:border-0 print:p-0 print:text-[9pt] print:leading-[1.3]">
           <header className="text-center">
             <h1 className="text-3xl font-semibold tracking-tight print:text-[20pt]">Omar Serrano</h1>
-            <p className="mt-1 text-lg font-medium text-accent-dark print:mt-0.5 print:text-[12pt]">{r.targetTitle}</p>
+            <p className="mt-1 text-lg font-medium text-gold print:mt-0.5 print:text-[12pt]">{r.targetTitle}</p>
             <p className="mt-2 text-[13px] text-muted print:mt-1 print:whitespace-nowrap print:text-[8.4pt]">
               Toronto, ON
               <span className="mx-2">·</span>
@@ -93,7 +93,7 @@ export default function ResumePage({ params }: { params: { locale: string } }) {
             <div className="flex items-baseline justify-between gap-4">
               <h3 className="font-semibold">
                 {r.projectTitle}
-                <a href={LINKS.repo} className="ml-2 font-normal text-muted hover:text-blue print:text-muted">
+                <a href={LINKS.repo} className="ml-2 font-normal text-muted hover:text-gold print:text-muted">
                   github.com/Omarion9000/canada-export-diversification
                 </a>
               </h3>
