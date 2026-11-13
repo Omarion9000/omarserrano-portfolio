@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const LOCALES = ["en", "es", "fr"] as const;
+const LOCALES = ["en", "es"] as const;
 type Locale = (typeof LOCALES)[number];
 const DEFAULT_LOCALE: Locale = "en";
 
@@ -21,6 +21,11 @@ function detectLocale(req: NextRequest): Locale {
 
 export function middleware(req: NextRequest) {
   const { pathname } = req.nextUrl;
+  if (pathname === "/fr" || pathname.startsWith("/fr/")) {
+    const url = req.nextUrl.clone();
+    url.pathname = pathname.replace(/^\/fr/, "/en");
+    return NextResponse.redirect(url, 308);
+  }
   if (LOCALES.some((l) => pathname === `/${l}` || pathname.startsWith(`/${l}/`))) {
     return NextResponse.next();
   }

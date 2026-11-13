@@ -1,40 +1,27 @@
-# Omar Serrano — Portfolio
+# omarserrano.ca
 
-Personal portfolio. Built with Next.js 14, Tailwind 3.4, framer-motion, matter-js.
+Personal site of Omar Serrano, Data Analyst in Toronto.
 
-- Live: https://omarserrano.ca
-- Toronto, GTA · EN · ES · FR
+Live: https://www.omarserrano.ca
 
 ## Stack
 
-- Next.js 14.2 (App Router)
-- React 18.3 + TypeScript
-- Tailwind CSS 3.4
-- framer-motion ^12
-- matter-js ^0.20 (drag physics on the hero)
-- @supabase/supabase-js (reserved for v3 guestbook)
+- Next.js (App Router), React, TypeScript
+- Tailwind CSS
+- Deployed on Vercel
 
-## Local dev
+## Run locally
 
 ```bash
 pnpm install
 pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) — middleware will redirect to `/en`, `/es`, or `/fr` based on your `Accept-Language` header.
+Open http://localhost:3000. The site is available in English (`/en`) and Spanish (`/es`).
 
-## Scripts
+## Resume PDF
 
-* `pnpm dev` — local dev server
-* `pnpm build` — production build
-* `pnpm typecheck` — TypeScript validation
-* `pnpm lint` — Next.js linter
-
-## i18n
-
-* Languages: EN (default), ES, FR
-* Detection: `Accept-Language` header via `middleware.ts`
-* Override: cookie `NEXT_LOCALE` set by the in-nav switcher
+The PDF in `public/cv/` is printed from the `/en/resume` page, so the site and the PDF always show the same content.
 
 ## License
 

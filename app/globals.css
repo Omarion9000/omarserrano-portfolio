@@ -2,121 +2,45 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --grid-color: rgba(26, 24, 20, 0.045);
-  --grid-size: 32px;
-  --paper-noise: 0.025;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
 }
 
-html, body {
-  background: #faf7f2;
-  color: #1a1814;
+html,
+body {
+  background: #f7f6f3;
+  color: #1b1a17;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
-.paper-grid {
-  background-image:
-    linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
-    linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
-  background-size: var(--grid-size) var(--grid-size);
-  background-position: -1px -1px;
-}
-
-.paper-noise::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0 0.08 0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/></svg>");
-  opacity: var(--paper-noise);
-  mix-blend-mode: multiply;
-}
-
-.cork-board {
-  background-color: #d6c2a3;
-  background-image:
-    radial-gradient(circle at 20% 30%, rgba(120,90,60,0.18) 0%, transparent 4%),
-    radial-gradient(circle at 70% 60%, rgba(140,110,75,0.15) 0%, transparent 3%),
-    radial-gradient(circle at 40% 80%, rgba(110,80,50,0.20) 0%, transparent 5%),
-    radial-gradient(circle at 85% 20%, rgba(130,100,70,0.16) 0%, transparent 4%),
-    radial-gradient(circle at 10% 70%, rgba(120,90,60,0.18) 0%, transparent 3%);
-  background-size: 40px 40px, 60px 60px, 50px 50px, 45px 45px, 55px 55px;
-}
-
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #faf7f2; }
-::-webkit-scrollbar-thumb {
-  background: #e5e1d8;
-  border-radius: 6px;
-  border: 2px solid #faf7f2;
-}
-::-webkit-scrollbar-thumb:hover { background: #a39b8e; }
-
 ::selection {
-  background: rgba(201, 106, 74, 0.25);
-  color: #1a1814;
+  background: rgba(217, 87, 43, 0.2);
 }
 
-.tape {
-  background: rgba(230, 184, 106, 0.55);
-  border: 1px solid rgba(180, 140, 70, 0.25);
+:focus-visible {
+  outline: 2px solid #2463c9;
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
-.terminal-caret {
-  display: inline-block;
-  width: 8px;
-  height: 1em;
-  background: #1a1814;
-  vertical-align: text-bottom;
-  margin-left: 2px;
-}
-
-@media (pointer: fine) and (prefers-reduced-motion: no-preference) {
-  * {
-    cursor: none !important;
-  }
-  input, textarea {
-    cursor: text !important;
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
   }
 }
 
-/* Pixel bunny sprite animation */
-@keyframes bunny-run-frames {
-  from { background-position: 0 0; }
-  to   { background-position: -160px 0; }
-}
-@keyframes bunny-idle-frames {
-  from { background-position: 0 0; }
-  to   { background-position: -256px 0; }
-}
-.bunny-sprite {
-  width: 32px;
-  height: 32px;
-  background-repeat: no-repeat;
-  image-rendering: pixelated;
-  -ms-interpolation-mode: nearest-neighbor;
-  transform: scale(1.75);
-  transform-origin: bottom center;
-}
-.bunny-sprite.run {
-  background-image: url('/sprites/bunny-run.png');
-  animation: bunny-run-frames 0.6s steps(5) infinite;
-}
-.bunny-sprite.idle {
-  background-image: url('/sprites/bunny-idle.png');
-  animation: bunny-idle-frames 1s steps(8) infinite;
-}
-
-html.lenis, html.lenis body {
-  height: auto;
-}
-.lenis.lenis-smooth {
-  scroll-behavior: auto !important;
-}
-.lenis.lenis-smooth [data-lenis-prevent] {
-  overscroll-behavior: contain;
-}
-.lenis.lenis-stopped {
-  overflow: hidden;
+@media print {
+  @page {
+    size: Letter;
+    margin: 0.4in 0.55in;
+  }
+  html,
+  body {
+    background: #fff !important;
+  }
+  .no-print {
+    display: none !important;
+  }
 }

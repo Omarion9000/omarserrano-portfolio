@@ -1,57 +1,25 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./app/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./lib/**/*.{ts,tsx}",
-  ],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        background: "#FAF7F2",
-        editor: {
-          surface: "#F2EFE9",
-          border: "#E5E1D8",
-        },
-        text: {
-          primary: "#1A1814",
-          secondary: "#5C544A",
-          muted: "#A39B8E",
-        },
-        accent: {
-          DEFAULT: "#C96A4A",
-          warm: "#E6B86A",
-        },
-        syntax: {
-          keyword: "#9C5BC2",
-          string: "#3D8B5C",
-          property: "#0E7490",
-          comment: "#A39B8E",
-          value: "#C96A4A",
-          plain: "#1A1814",
-        },
+        paper: "#F7F6F3",
+        card: "#FFFFFF",
+        ink: "#1B1A17",
+        muted: "#5E5A52",
+        faint: "#8C877D",
+        line: "#E4E1DA",
+        accent: { DEFAULT: "#D9572B", dark: "#B8441D" },
+        blue: { DEFAULT: "#2463C9", dark: "#1B4E9F" },
+        slate: { DEFAULT: "#52504B" },
       },
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        mono: ["var(--font-jetbrains)", "ui-monospace", "SFMono-Regular", "monospace"],
-        signature: ["var(--font-caveat)", "cursive"],
+        sans: ["'Inter Variable'", "system-ui", "sans-serif"],
+        mono: ["'JetBrains Mono Variable'", "ui-monospace", "SFMono-Regular", "monospace"],
       },
-      boxShadow: {
-        paper: "0 1px 2px rgba(26,24,20,0.04), 0 8px 24px -8px rgba(26,24,20,0.12)",
-        polaroid: "0 2px 4px rgba(26,24,20,0.08), 0 16px 32px -12px rgba(26,24,20,0.18)",
-        terminal: "0 1px 2px rgba(26,24,20,0.06), 0 20px 40px -16px rgba(26,24,20,0.22)",
-        postit: "0 1px 1px rgba(26,24,20,0.05), 0 12px 20px -8px rgba(26,24,20,0.16)",
-      },
-      keyframes: {
-        "cursor-blink": {
-          "0%, 50%": { opacity: "1" },
-          "51%, 100%": { opacity: "0" },
-        },
-      },
-      animation: {
-        "cursor-blink": "cursor-blink 1s step-end infinite",
-      },
+      maxWidth: { page: "72rem" },
     },
   },
   plugins: [],

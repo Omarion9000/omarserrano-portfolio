@@ -1,44 +1,32 @@
 import type { Metadata } from "next";
-import { Inter, JetBrains_Mono, Caveat } from "next/font/google";
+import "@fontsource-variable/inter";
+import "@fontsource-variable/jetbrains-mono";
 import { notFound } from "next/navigation";
 import { getDictionary, LOCALES } from "@/lib/i18n";
-import CustomCursor from "@/components/CustomCursor";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const jetbrains = JetBrains_Mono({ subsets: ["latin"], variable: "--font-jetbrains", display: "swap" });
-const caveat = Caveat({
-  subsets: ["latin"],
-  variable: "--font-caveat",
-  display: "swap",
-  weight: ["600", "700"],
-});
-
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
 }
 
-const OG_LOCALES: Record<string, string> = {
-  en: "en_CA",
-  es: "es_MX",
-  fr: "fr_CA",
-};
+const SITE = "https://www.omarserrano.ca";
 
-export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+export function generateMetadata({ params }: { params: { locale: string } }): Metadata {
   const dict = getDictionary(params.locale);
-  const ogLocale = OG_LOCALES[params.locale] ?? OG_LOCALES.en;
-  const url = `https://www.omarserrano.ca/${params.locale}`;
-
   return {
-    metadataBase: new URL("https://www.omarserrano.ca"),
+    metadataBase: new URL(SITE),
     title: dict.meta.title,
     description: dict.meta.description,
+    alternates: {
+      canonical: `/${params.locale}`,
+      languages: { en: "/en", es: "/es" },
+    },
     openGraph: {
       title: dict.meta.title,
       description: dict.meta.description,
-      url,
+      url: `${SITE}/${params.locale}`,
       siteName: "Omar Serrano",
       type: "website",
-      locale: ogLocale,
+      locale: params.locale === "es" ? "es_MX" : "en_CA",
     },
     twitter: {
       card: "summary_large_image",
@@ -55,16 +43,11 @@ export default function LocaleLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
-  if (!(LOCALES as readonly string[]).includes(params.locale)) {
-    notFound();
-  }
+  if (!(LOCALES as readonly string[]).includes(params.locale)) notFound();
 
   return (
-    <html lang={params.locale} className={`${inter.variable} ${jetbrains.variable} ${caveat.variable}`}>
-      <body className="bg-background text-text-primary font-sans antialiased">
-        <CustomCursor />
-        <div className="relative min-h-screen paper-grid paper-noise">{children}</div>
-      </body>
+    <html lang={params.locale}>
+      <body className="bg-paper font-sans text-ink antialiased">{children}</body>
     </html>
   );
 }

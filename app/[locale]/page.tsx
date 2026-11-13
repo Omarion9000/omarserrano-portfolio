@@ -1,39 +1,29 @@
 import { getDictionary } from "@/lib/i18n";
-import IntroAnimation from "@/components/IntroAnimation";
-import SmoothScroll from "@/components/SmoothScroll";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import About from "@/components/About";
-import Work from "@/components/Work";
-import Stack from "@/components/Stack";
-import Services from "@/components/Services";
-import Resume from "@/components/Resume/FolderManila";
+import FeaturedProject from "@/components/FeaturedProject";
+import Skills from "@/components/Skills";
+import Apps from "@/components/Apps";
+import Experience from "@/components/Experience";
+import Education from "@/components/Education";
 import Contact from "@/components/Contact";
-import ChatWidget from "@/components/ChatWidget";
-import SofiaModal from "@/components/Sofia/Modal";
 import Footer from "@/components/Footer";
 
 export default function HomePage({ params }: { params: { locale: string } }) {
   const dict = getDictionary(params.locale);
-
   return (
     <>
-      <IntroAnimation />
-      <SmoothScroll>
-        <Navbar locale={params.locale} dict={dict} />
-        <main>
-          <Hero dict={dict} locale={params.locale} />
-          <About dict={dict} />
-          <Work dict={dict} />
-          <Stack dict={dict} />
-          <Services dict={dict} />
-          <Resume dict={dict} locale={params.locale} />
-          <Contact dict={dict} locale={params.locale} />
-        </main>
-        <Footer dict={dict} />
-      </SmoothScroll>
-      <ChatWidget dict={dict} />
-      <SofiaModal dict={dict} />
+      <Navbar locale={params.locale} dict={dict} />
+      <main>
+        <Hero dict={dict} />
+        <FeaturedProject dict={dict} />
+        <Skills dict={dict} />
+        <Experience dict={dict} />
+        <Education dict={dict} />
+        <Apps dict={dict} />
+        <Contact dict={dict} />
+      </main>
+      <Footer dict={dict} />
     </>
   );
 }

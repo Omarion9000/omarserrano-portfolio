@@ -1,17 +1,16 @@
 import en from "./en";
 import es from "./es";
-import fr from "./fr";
+import type { Dict } from "./types";
 
-export const LOCALES = ["en", "es", "fr"] as const;
+export const LOCALES = ["en", "es"] as const;
 export type Locale = (typeof LOCALES)[number];
 export const DEFAULT_LOCALE: Locale = "en";
+export type Dictionary = Dict;
 
-const dictionaries = { en, es, fr } as const;
-export type Dictionary = typeof en;
+const dictionaries: Record<Locale, Dict> = { en, es };
 
-export function getDictionary(locale: string): Dictionary {
-  if ((LOCALES as readonly string[]).includes(locale)) {
-    return dictionaries[locale as Locale] as unknown as Dictionary;
-  }
-  return dictionaries[DEFAULT_LOCALE] as unknown as Dictionary;
+export function getDictionary(locale: string): Dict {
+  return (LOCALES as readonly string[]).includes(locale)
+    ? dictionaries[locale as Locale]
+    : dictionaries[DEFAULT_LOCALE];
 }
