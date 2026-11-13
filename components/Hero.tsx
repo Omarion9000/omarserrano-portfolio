@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { Dictionary } from "@/lib/i18n";
 import { LINKS } from "@/lib/links";
@@ -19,8 +20,18 @@ export default function Hero({ dict, locale }: { dict: Dictionary; locale: strin
       <div className="relative mx-auto max-w-page px-5 pb-20 pt-32 sm:px-8 md:pb-28 md:pt-40">
         <div className="grid items-center gap-12 lg:grid-cols-[1fr_1.1fr]">
           <div>
-            <p className="text-xs font-medium uppercase tracking-label text-gold-light">{h.location}</p>
-            <h1 className="mt-5 font-serif text-5xl font-medium leading-[1.02] tracking-tight sm:text-7xl">
+            <div className="flex items-center gap-4">
+              <Image
+                src="/photo/omar-serrano.webp"
+                alt="Omar Serrano"
+                width={112}
+                height={112}
+                priority
+                className="h-20 w-20 rounded-full object-cover ring-2 ring-gold-light/70 ring-offset-4 ring-offset-navy-900 sm:h-24 sm:w-24"
+              />
+              <p className="text-xs font-medium uppercase tracking-label text-gold-light">{h.location}</p>
+            </div>
+            <h1 className="mt-7 font-serif text-5xl font-medium leading-[1.02] tracking-tight sm:text-7xl">
               Omar Serrano
             </h1>
             <p className="mt-5 text-2xl font-light tracking-tight text-white sm:text-[1.75rem]">{h.title}</p>
